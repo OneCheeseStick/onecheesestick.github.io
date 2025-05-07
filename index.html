@@ -2,37 +2,17 @@
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script>
-      AFRAME.registerComponent('make-transparent', {
-        schema: {
-          opacity: { type: 'number', default: 0.5 }
-        },
-        init: function () {
-          this.el.addEventListener('model-loaded', () => {
-            const mesh = this.el.getObject3D('mesh');
-            if (!mesh) return;
-
-            mesh.traverse((node) => {
-              if (node.isMesh && node.material) {
-                node.material.transparent = true;
-                node.material.opacity = this.data.opacity;
-                node.material.depthWrite = false;
-              }
-            });
-          });
-        }
-      });
-    </script>
+   
     
   </head>
   <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
       <a-assets>
-        <a-asset-item id="ghost" src="https://raw.githubusercontent.com/OneCheeseStick/ghosts/refs/heads/main/dead_kakis.gltf"></a-asset-item>
+        <a-asset-item id="ghost" src="https://raw.githubusercontent.com/OneCheeseStick/ghosts/refs/heads/main/deadkakis.gltf"></a-asset-item>
       </a-assets>
 
       <a-marker type="pattern" url="pattern-markieris.patt">
-        <a-entity gltf-model="#ghost" scale="5 5 5" rotation="90 180 0" position="0 10 2"
+        <a-entity gltf-model="#ghost" scale="5 5 5" rotation="90 180 0" position="0 0 2"
            make-transparent="opacity: 0.5"
                 animation="property: position; dir: alternate; dur: 2000; easing: easeInOutSine;
                            loop: true; to: 0 2.3 2">></a-entity>
