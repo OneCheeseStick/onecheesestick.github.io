@@ -1,34 +1,20 @@
 <html>
   <head>
+    <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
+    <meta aframe-injected="" name="theme-color" content="black">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    
     <script src="https://raw.githack.com/AR-js-org/AR.js/dev/aframe/build/aframe-ar.js"></script> 
     <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-      AFRAME.registerComponent('make-transparent', {
-        schema: {
-          opacity: { type: 'number', default: 0.5 }
-        },
-        init: function () {
-          this.el.addEventListener('model-loaded', () => {
-            const mesh = this.el.getObject3D('mesh');
-            if (!mesh) return;
-
-            mesh.traverse((node) => {
-              if (node.isMesh && node.material) {
-                node.material.transparent = true;
-                node.material.opacity = this.data.opacity;
-                node.material.depthWrite = false;
-              }
-            });
-          });
-        }
-      });
-    </script>
+   
   </head>
 
+  
+
 <body style="margin-right: 0px; margin-bottom: 0px; margin-left: 0px; overflow: hidden; width: 1025px; height: 480px;">
-        <a-scene embedded="" arjs="sourceType: webcam;" inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
-        
+        <a-scene  arjs="sourceType: webcam;" inspector="" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
+         
         <!-- pie url= norÄdiet ceÄ¼u uz savu Ä£enerÄ“to marÄ·iera failu (mapesnosaukums/failanosaukums.patt)  -->
         
         <a-marker type="pattern" url="https://onecheesestick.github.io/pattern-markieris.patt" material="" arjs-anchor="" arjs-hit-testing="">
@@ -46,7 +32,12 @@
 
         <a-entity camera></a-entity>
           
-        <canvas class="a-canvas" data-aframe-canvas="true" data-engine="three.js r158" width="1025" height="480"></canvas><div class="a-loader-title" style="display: none;"></div><div class="a-enter-vr fullscreen" aframe-injected="" style="position: fixed;"><button class="a-enter-vr-button" title="Enter VR mode with a headset or fullscreen without" aframe-injected=""></button></div><div class="a-orientation-modal a-hidden" aframe-injected=""><button aframe-injected="">Exit VR</button></div><a-entity light="" data-aframe-default-light="" aframe-injected=""></a-entity><a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity></a-scene>
+        <canvas class="a-canvas" data-aframe-canvas="true" data-engine="three.js r158" width="1025" height="480">
+          
+        </canvas><div class="a-loader-title" style="display: none;"></div><div class="a-enter-vr fullscreen" aframe-injected="" style="position: fixed;">
+          <button class="a-enter-vr-button" title="Enter VR mode with a headset or fullscreen without" aframe-injected=""></button>
+        </div><div class="a-orientation-modal a-hidden" aframe-injected=""><button aframe-injected="">Exit VR</button></div><a-entity light="" data-aframe-default-light="" aframe-injected="">
+     </a-entity><a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity></a-scene>
     
  <div id="error-popup">Webcam Error
 Name: NotAllowedError
@@ -54,3 +45,5 @@ Message: Permission denied</div></body>
 
   </body>
 </html>
+
+
