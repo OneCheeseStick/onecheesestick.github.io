@@ -10,7 +10,10 @@
       </a-assets>
 
       <a-marker type="pattern" url="pattern-markieris.patt">
-        <a-entity gltf-model="#ghost" scale="2 2 2" rotation="90 180 0" position="0 0 0"></a-entity>
+        <a-entity gltf-model="#ghost" scale="5 5 5" rotation="90 180 0" position="0 2 2"
+           make-transparent="opacity: 0.5"
+                animation="property: position; dir: alternate; dur: 2000; easing: easeInOutSine;
+                           loop: true; to: 0 2.3 2">></a-entity>
       </a-marker>
 
       <a-entity camera></a-entity>
